@@ -1,3 +1,4 @@
+
 class Distribution:
 
     def __init__(self, mu=0, sigma=1):
