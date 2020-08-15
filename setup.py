@@ -16,7 +16,7 @@ setup(
 
     name="curve_distributions",
 
-    version="0.2",
+    version="0.3",
 
     description="Various functions on Gaussian and Binomial distributions",
 

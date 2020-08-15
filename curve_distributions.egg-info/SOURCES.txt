@@ -1,3 +1,4 @@
+README.md
 setup.py
 curve_distributions/Binomialdistribution.py
 curve_distributions/Gaussiandistribution.py
