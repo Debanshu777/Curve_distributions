@@ -30,11 +30,13 @@ jobs:
       run: |
         python -m unittest test
     - name: Publish distribution 📦 to Test PyPI
+      if: github.event_name == 'release' && job.status == 'success'
       uses: pypa/gh-action-pypi-publish@master
       with:
         password: ${{ secrets.test_pypi_password }}
         repository_url: https://test.pypi.org/legacy/
     - name: Publish distribution 📦 to PyPI
+      if: github.event_name == 'release' && job.status == 'success'
       uses: pypa/gh-action-pypi-publish@master
       with:
         password: ${{ secrets.pypi_password }}
