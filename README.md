@@ -21,7 +21,7 @@ the probability density function along the same range,etc.
 This repo is quite new I am trying to set up a easiest way to contribute to live python package available on pypi. The code is really simple and basic can be undertood and adapted easily. Perfect for <b>Hacktoberfest</b>
 - New ideas are most welcome <b>*"Raise issues in case you have some suggestions/bugs"*</b>.
 - For <b>First time contributers</b>👶, I can help them with their contributions <b>*"Raise an issue"*</b>. Visit <a href="https://github.com/firstcontributions/first-contributions">Firstcontributions</a> to get more info about first contributions.
-- Before making a Pull Request🤖 don't foget to add your name is the <a href="https://github.com/Debanshu777/Curve_distributions/blob/master/Contributing.md">Contributing.md</a> in the format <Contributer_name>:<Edits_in_one_line>.
+- Before making a Pull Request🤖 don't forget to add your name is the <a href="https://github.com/Debanshu777/Curve_distributions/blob/master/Contributing.md">Contributing.md</a> in the format <Contributer_name>:<Edits_in_one_line>.
 
 ## Installation 🧠
 - Step 0: Create a virtual enviroment<br>
