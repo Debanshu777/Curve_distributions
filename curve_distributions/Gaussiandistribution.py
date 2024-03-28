@@ -14,11 +14,11 @@ class Gaussian(Distribution):
 
     """
 
-    def __init__(self, mu:int=0, sigma:int=1):
+    def __init__(self, mu:int=0, sigma:int=1) -> None:
 
         Distribution.__init__(self, mu, sigma)
 
-    def calculate_mean(self):
+    def calculate_mean(self) -> float:
 
         """Function to calculate the mean of the data set.
 
@@ -36,7 +36,7 @@ class Gaussian(Distribution):
 
         return self.mean
 
-    def calculate_stdev(self, sample:bool=True):
+    def calculate_stdev(self, sample:bool=True) -> float:
 
         """Function to calculate the standard deviation of the data set.
 
@@ -66,7 +66,7 @@ class Gaussian(Distribution):
 
         return self.stdev
 
-    def plot_histogram(self):
+    def plot_histogram(self) -> None:
         """Function to output a histogram of the instance variable data using
         matplotlib pyplot library.
 
@@ -81,7 +81,7 @@ class Gaussian(Distribution):
         plt.xlabel('data')
         plt.ylabel('count')
 
-    def pdf(self, x):
+    def pdf(self, x) -> float:
         """Probability density function calculator for the gaussian distribution.
 
         Args:
@@ -94,7 +94,7 @@ class Gaussian(Distribution):
 
         return (1.0 / (self.stdev * math.sqrt(2 * math.pi))) * math.exp(-0.5 * ((x - self.mean) / self.stdev) ** 2)
 
-    def plot_histogram_pdf(self, n_spaces=50):
+    def plot_histogram_pdf(self, n_spaces=50) -> list:
 
         """Function to plot the normalized histogram of the data and a plot of the
         probability density function along the same range
@@ -158,7 +158,7 @@ class Gaussian(Distribution):
 
         return result
 
-    def __repr__(self):
+    def __repr__(self) -> str:
 
         """Function to output the characteristics of the Gaussian instance
 
