@@ -16,10 +16,10 @@ class Binomial(Distribution):
 
     """
 
-    def __init__(self, prob=.5, size=20):
+    def __init__(self, prob:float=.5, size:int=20):
 
-        self.n = size
-        self.p = prob
+        self.n:int = size
+        self.p:float = prob
 
         Distribution.__init__(self, self.calculate_mean(), self.calculate_stdev())
 
@@ -35,7 +35,7 @@ class Binomial(Distribution):
     
         """
 
-        self.mean = self.p * self.n
+        self.mean:float = self.p * self.n
 
         return self.mean
 
@@ -51,7 +51,7 @@ class Binomial(Distribution):
     
         """
 
-        self.stdev = math.sqrt(self.n * self.p * (1 - self.p))
+        self.stdev:float = math.sqrt(self.n * self.p * (1 - self.p))
 
         return self.stdev
 
@@ -68,9 +68,9 @@ class Binomial(Distribution):
     
         """
 
-        self.n = len(self.data)
-        self.p = 1.0 * sum(self.data) / len(self.data)
-        self.mean = self.calculate_mean()
+        self.n:float = len(self.data)
+        self.p:float = 1.0 * sum(self.data) / len(self.data)
+        self.mean:float = self.calculate_mean()
         self.stdev = self.calculate_stdev()
         return self.p, self.n
 
@@ -101,7 +101,7 @@ class Binomial(Distribution):
             float: probability density function output
         """
 
-        a = math.factorial(self.n) / (math.factorial(k) * (math.factorial(self.n - k)))
+        a:float = math.factorial(self.n) / (math.factorial(k) * (math.factorial(self.n - k)))
         b = (self.p ** k) * (1 - self.p) ** (self.n - k)
 
         return a * b
@@ -119,8 +119,8 @@ class Binomial(Distribution):
             
         """
 
-        x = []
-        y = []
+        x:list = []
+        y:list = []
 
         # calculate the x values to visualize
         for i in range(self.n + 1):
@@ -154,7 +154,7 @@ class Binomial(Distribution):
         except AssertionError as error:
             raise
 
-        result = Binomial()
+        result:Binomial = Binomial()
         result.n = self.n + other.n
         result.p = self.p
         result.calculate_mean()
