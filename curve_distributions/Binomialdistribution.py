@@ -16,14 +16,14 @@ class Binomial(Distribution):
 
     """
 
-    def __init__(self, prob:float=.5, size:int=20):
+    def __init__(self, prob:float=.5, size:int=20) -> None:
 
         self.n:int = size
         self.p:float = prob
 
         Distribution.__init__(self, self.calculate_mean(), self.calculate_stdev())
 
-    def calculate_mean(self):
+    def calculate_mean(self) -> float:
 
         """Function to calculate the mean from p and n
         
@@ -39,7 +39,7 @@ class Binomial(Distribution):
 
         return self.mean
 
-    def calculate_stdev(self):
+    def calculate_stdev(self) -> float:
 
         """Function to calculate the standard deviation from p and n.
         
@@ -55,7 +55,7 @@ class Binomial(Distribution):
 
         return self.stdev
 
-    def replace_stats_with_data(self):
+    def replace_stats_with_data(self) -> float:
 
         """Function to calculate p and n from the data set
         
@@ -74,7 +74,7 @@ class Binomial(Distribution):
         self.stdev = self.calculate_stdev()
         return self.p, self.n
 
-    def plot_bar(self):
+    def plot_bar(self) -> None:
         """Function to output a histogram of the instance variable data using 
         matplotlib pyplot library.
         
@@ -90,7 +90,7 @@ class Binomial(Distribution):
         plt.xlabel('outcome')
         plt.ylabel('count')
 
-    def pdf(self, k):
+    def pdf(self, k) -> float:
         """Probability density function calculator for the gaussian distribution.
         
         Args:
@@ -106,7 +106,7 @@ class Binomial(Distribution):
 
         return a * b
 
-    def plot_bar_pdf(self):
+    def plot_bar_pdf(self) -> list:
 
         """Function to plot the pdf of the binomial distribution
         
@@ -162,7 +162,7 @@ class Binomial(Distribution):
 
         return result
 
-    def __repr__(self):
+    def __repr__(self) -> str:
 
         """Function to output the characteristics of the Binomial instance
         
