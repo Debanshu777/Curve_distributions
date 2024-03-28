@@ -14,7 +14,7 @@ class Gaussian(Distribution):
 
     """
 
-    def __init__(self, mu=0, sigma=1):
+    def __init__(self, mu:int=0, sigma:int=1):
 
         Distribution.__init__(self, mu, sigma)
 
@@ -30,13 +30,13 @@ class Gaussian(Distribution):
 
         """
 
-        avg = 1.0 * sum(self.data) / len(self.data)
+        avg:float = 1.0 * sum(self.data) / len(self.data)
 
-        self.mean = avg
+        self.mean:float = avg
 
         return self.mean
 
-    def calculate_stdev(self, sample=True):
+    def calculate_stdev(self, sample:bool=True):
 
         """Function to calculate the standard deviation of the data set.
 
@@ -49,20 +49,20 @@ class Gaussian(Distribution):
         """
 
         if sample:
-            n = len(self.data) - 1
+            n:int = len(self.data) - 1
         else:
-            n = len(self.data)
+            n:int = len(self.data)
 
-        mean = self.calculate_mean()
+        mean:float = self.calculate_mean()
 
-        sigma = 0
+        sigma:int = 0
 
         for d in self.data:
             sigma += (d - mean) ** 2
 
-        sigma = math.sqrt(sigma / n)
+        sigma:float = math.sqrt(sigma / n)
 
-        self.stdev = sigma
+        self.stdev:float = sigma
 
         return self.stdev
 
@@ -117,8 +117,8 @@ class Gaussian(Distribution):
         # calculates the interval between x values
         interval = 1.0 * (max_range - min_range) / n_spaces
 
-        x = []
-        y = []
+        x:list = []
+        y:list = []
 
         # calculate the x values to visualize
         for i in range(n_spaces):
@@ -152,7 +152,7 @@ class Gaussian(Distribution):
 
         """
 
-        result = Gaussian()
+        result:Gaussian = Gaussian()
         result.mean = self.mean + other.mean
         result.stdev = math.sqrt(self.stdev ** 2 + other.stdev ** 2)
 
