@@ -14,11 +14,11 @@ class Gaussian(Distribution):
 
     """
 
-    def __init__(self, mu=0, sigma=1):
+    def __init__(self, mu:int=0, sigma:int=1) -> None:
 
         Distribution.__init__(self, mu, sigma)
 
-    def calculate_mean(self):
+    def calculate_mean(self) -> float:
 
         """Function to calculate the mean of the data set.
 
@@ -30,13 +30,13 @@ class Gaussian(Distribution):
 
         """
 
-        avg = 1.0 * sum(self.data) / len(self.data)
+        avg:float = 1.0 * sum(self.data) / len(self.data)
 
-        self.mean = avg
+        self.mean:float = avg
 
         return self.mean
 
-    def calculate_stdev(self, sample=True):
+    def calculate_stdev(self, sample:bool=True) -> float:
 
         """Function to calculate the standard deviation of the data set.
 
@@ -49,24 +49,24 @@ class Gaussian(Distribution):
         """
 
         if sample:
-            n = len(self.data) - 1
+            n:int = len(self.data) - 1
         else:
-            n = len(self.data)
+            n:int = len(self.data)
 
-        mean = self.calculate_mean()
+        mean:float = self.calculate_mean()
 
-        sigma = 0
+        sigma:int = 0
 
         for d in self.data:
             sigma += (d - mean) ** 2
 
-        sigma = math.sqrt(sigma / n)
+        sigma:float = math.sqrt(sigma / n)
 
-        self.stdev = sigma
+        self.stdev:float = sigma
 
         return self.stdev
 
-    def plot_histogram(self):
+    def plot_histogram(self) -> None:
         """Function to output a histogram of the instance variable data using
         matplotlib pyplot library.
 
@@ -81,7 +81,7 @@ class Gaussian(Distribution):
         plt.xlabel('data')
         plt.ylabel('count')
 
-    def pdf(self, x):
+    def pdf(self, x) -> float:
         """Probability density function calculator for the gaussian distribution.
 
         Args:
@@ -94,7 +94,7 @@ class Gaussian(Distribution):
 
         return (1.0 / (self.stdev * math.sqrt(2 * math.pi))) * math.exp(-0.5 * ((x - self.mean) / self.stdev) ** 2)
 
-    def plot_histogram_pdf(self, n_spaces=50):
+    def plot_histogram_pdf(self, n_spaces=50) -> list:
 
         """Function to plot the normalized histogram of the data and a plot of the
         probability density function along the same range
@@ -117,8 +117,8 @@ class Gaussian(Distribution):
         # calculates the interval between x values
         interval = 1.0 * (max_range - min_range) / n_spaces
 
-        x = []
-        y = []
+        x:list = []
+        y:list = []
 
         # calculate the x values to visualize
         for i in range(n_spaces):
@@ -152,13 +152,13 @@ class Gaussian(Distribution):
 
         """
 
-        result = Gaussian()
+        result:Gaussian = Gaussian()
         result.mean = self.mean + other.mean
         result.stdev = math.sqrt(self.stdev ** 2 + other.stdev ** 2)
 
         return result
 
-    def __repr__(self):
+    def __repr__(self) -> str:
 
         """Function to output the characteristics of the Gaussian instance
 

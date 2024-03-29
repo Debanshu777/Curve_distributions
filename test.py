@@ -12,7 +12,7 @@ from curve_distributions import Binomial
 
 class TestGaussianClass(unittest.TestCase):
     def setUp(self):
-        self.gaussian = Gaussian(25, 2)
+        self.gaussian:Gaussian = Gaussian(25, 2)
         self.gaussian.read_data_file('numbers.txt')
 
     def test_initialization(self):
@@ -40,9 +40,9 @@ class TestGaussianClass(unittest.TestCase):
                          'pdf function after calculating mean and stdev does not give expected result')
 
     def test_add(self):
-        gaussian_one = Gaussian(25, 3)
-        gaussian_two = Gaussian(30, 4)
-        gaussian_sum = gaussian_one + gaussian_two
+        gaussian_one:Gaussian = Gaussian(25, 3)
+        gaussian_two:Gaussian = Gaussian(30, 4)
+        gaussian_sum:Gaussian = gaussian_one + gaussian_two
 
         self.assertEqual(gaussian_sum.mean, 55)
         self.assertEqual(gaussian_sum.stdev, 5)
@@ -62,11 +62,11 @@ class TestBinomialClass(unittest.TestCase):
                          [0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0], 'data not read in correctly')
 
     def test_calculatemean(self):
-        mean = self.binomial.calculate_mean()
+        mean:float = self.binomial.calculate_mean()
         self.assertEqual(mean, 8)
 
     def test_calculatestdev(self):
-        stdev = self.binomial.calculate_stdev()
+        stdev:float = self.binomial.calculate_stdev()
         self.assertEqual(round(stdev, 2), 2.19)
 
     def test_replace_stats_with_data(self):
@@ -83,9 +83,9 @@ class TestBinomialClass(unittest.TestCase):
         self.assertEqual(round(self.binomial.pdf(3), 5), 0.00472)
 
     def test_add(self):
-        binomial_one = Binomial(.4, 20)
-        binomial_two = Binomial(.4, 60)
-        binomial_sum = binomial_one + binomial_two
+        binomial_one:Binomial = Binomial(.4, 20)
+        binomial_two:Binomial = Binomial(.4, 60)
+        binomial_sum:Binomial = binomial_one + binomial_two
 
         self.assertEqual(binomial_sum.p, .4)
         self.assertEqual(binomial_sum.n, 80)
