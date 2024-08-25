@@ -1,7 +1,7 @@
 
 class Distribution:
 
-    def __init__(self, mu=0, sigma=1):
+    def __init__(self, mu=0, sigma=1) -> None:
         """ Generic distribution class for calculating and
         visualizing a probability distribution.
 
@@ -11,11 +11,11 @@ class Distribution:
             data_list (list of floats) a list of floats extracted from the data file
             """
 
-        self.mean = mu
-        self.stdev = sigma
-        self.data = []
+        self.mean :int = mu
+        self.stdev :int = sigma
+        self.data :list = []
 
-    def read_data_file(self, file_name):
+    def read_data_file(self, file_name) -> None:
         """Function to read in data from a txt file. The txt file should have
         one number (float) per line. The numbers are stored in the data attribute.
 
@@ -28,11 +28,11 @@ class Distribution:
         """
 
         with open(file_name) as file:
-            data_list = []
-            line = file.readline()
+            data_list:list[int] = []
+            line:str = file.readline()
             while line:
                 data_list.append(int(line))
-                line = file.readline()
+                line:str = file.readline()
         file.close()
 
-        self.data = data_list
+        self.data :list = data_list
