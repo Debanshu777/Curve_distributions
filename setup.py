@@ -1,14 +1,15 @@
-import pathlib
+from pathlib import Path
 
 from setuptools import setup
 
 # The directory containing this file
 
-HERE = pathlib.Path(__file__).parent
+HERE :Path = Path(__file__).parent
 
 # The text of the README file
+# The text of the README file is used as the long_description for the package
 
-README = (HERE /"curve_distributions/README.md").read_text()
+README :str = (HERE /"curve_distributions/README.md").read_text()
 
 # This call to setup() does all the work
 
@@ -33,17 +34,14 @@ setup(
     license="MIT",
 
     classifiers=[
-
         "License :: OSI Approved :: MIT License",
 
         "Programming Language :: Python :: 3",
 
         "Programming Language :: Python :: 3.7",
-
     ],
 
     packages=["curve_distributions"],
 
     zip_safe=False
-
 )
