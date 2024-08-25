@@ -6,120 +6,122 @@ Home-page: https://github.com/Debanshu777/Curve_distributions
 Author: Debanshu777
 Author-email: debanshudatta123@gmil.com
 License: MIT
-Description: # Curve_distributions
-        
-        ## Description 
-        This is Curve Distribution package read in data from a txt file. The txt file should have
-        one number (float) per line. The numbers are stored and according there are several functions 
-        are present:
-        - Gaussian Distribution
-        - Binomial Distribution <br>
-        functions includes calculating mean,standard deviation,plotting in-from of histograms,getting
-        probability distribution function,plotting the normalized histogram of the data and a plot of 
-        the probability density function along the same range,etc.
-         
-        ## Classes
-        - Gaussian distribution class for calculating and
-            visualizing a Gaussian distribution.
-        
-            Attributes:
-            
-                - mean (float) representing the mean value of the distribution
-                - stdev (float) representing the standard deviation of the distribution
-                - data_list (list of floats) a list of floats extracted from the data file
-        - Binomial distribution class for calculating and 
-            visualizing a Binomial distribution.
-            
-            Attributes:
-            
-                - mean (float) representing the mean value of the distribution
-                - stdev (float) representing the standard deviation of the distribution
-                - data_list (list of floats) a list of floats to be extracted from the data file
-                - p (float) representing the probability of an event occurring
-                - n (int) number of trials
-        
-        
-        ## Functions
-        List of all the functions present that can be performed with either of the  Gaussian or Binomial
-        distributions 
-        - ```read_data_file(self,file_name)```
-            Function to read in data from a txt file. The txt file should have
-                one number (float) per line. The numbers are stored in the data attribute.
-        
-                Args:
-                    file_name (string): name of a file to read from
-        
-                Returns:
-                    None
-         
-        - ```calculate_mean(self)```
-            Function to calculate the mean of the data set.
-        
-                Args:
-                    None
-        
-                Returns:
-                    float: mean of the data set
-        - ```calculate_stdev(self, sample=True)``` 
-            Function to calculate the standard deviation of the data set.
-        
-                Args:
-                    sample (bool): whether the data represents a sample or population
-        
-                Returns:
-                    float: standard deviation of the data set
-        - ```plot_histogram(self)```
-            Function to output a histogram of the instance variable data using
-                matplotlib pyplot library.
-        
-                Args:
-                    None
-        
-                Returns:
-                    None
-        - ```pdf(self, x)```
-            Probability density function calculator for the gaussian distribution.
-        
-                Args:
-                    x (float): point for calculating the probability density function
-        
-        
-                Returns:
-                    float: probability density function output
-        - ```plot_histogram_pdf(self, n_spaces=50)```
-            Function to plot the normalized histogram of the data and a plot of the
-                probability density function along the same range
-        
-                Args:
-                    n_spaces (int): number of data points
-        
-                Returns:
-                    list: x values for the pdf plot
-                    list: y values for the pdf plot
-        - ```__add__(self, other)```
-            Function to add together two Gaussian distributions
-        
-                Args:
-                    other (Gaussian): Gaussian instance
-        
-                Returns:
-                    Gaussian: Gaussian distribution
-        - ```__repr__(self)```
-            Function to output the characteristics of the Gaussian instance
-        
-                Args:
-                    None
-        
-                Returns:
-                    string: characteristics of the Gaussian
-        
-        ## Installation
-        - Step 1: To install the package<br>
-            ```pip install curve_distributions```
-        - Step 2: To import the package and classes<br>
-            ```from curve_distributions import Gaussian,Binomial```
 Platform: UNKNOWN
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3
 Classifier: Programming Language :: Python :: 3.7
 Description-Content-Type: text/markdown
+
+# Curve_distributions
+
+## Description 
+This is Curve Distribution package read in data from a txt file. The txt file should have
+one number (float) per line. The numbers are stored and according there are several functions 
+are present:
+- Gaussian Distribution
+- Binomial Distribution <br>
+functions includes calculating mean,standard deviation,plotting in-from of histograms,getting
+probability distribution function,plotting the normalized histogram of the data and a plot of 
+the probability density function along the same range,etc.
+ 
+## Classes
+- Gaussian distribution class for calculating and
+    visualizing a Gaussian distribution.
+
+    Attributes:
+    
+        - mean (float) representing the mean value of the distribution
+        - stdev (float) representing the standard deviation of the distribution
+        - data_list (list of floats) a list of floats extracted from the data file
+- Binomial distribution class for calculating and 
+    visualizing a Binomial distribution.
+    
+    Attributes:
+    
+        - mean (float) representing the mean value of the distribution
+        - stdev (float) representing the standard deviation of the distribution
+        - data_list (list of floats) a list of floats to be extracted from the data file
+        - p (float) representing the probability of an event occurring
+        - n (int) number of trials
+
+
+## Functions
+List of all the functions present that can be performed with either of the  Gaussian or Binomial
+distributions 
+- ```read_data_file(self,file_name)```
+    Function to read in data from a txt file. The txt file should have
+        one number (float) per line. The numbers are stored in the data attribute.
+
+        Args:
+            file_name (string): name of a file to read from
+
+        Returns:
+            None
+ 
+- ```calculate_mean(self)```
+    Function to calculate the mean of the data set.
+
+        Args:
+            None
+
+        Returns:
+            float: mean of the data set
+- ```calculate_stdev(self, sample=True)``` 
+    Function to calculate the standard deviation of the data set.
+
+        Args:
+            sample (bool): whether the data represents a sample or population
+
+        Returns:
+            float: standard deviation of the data set
+- ```plot_histogram(self)```
+    Function to output a histogram of the instance variable data using
+        matplotlib pyplot library.
+
+        Args:
+            None
+
+        Returns:
+            None
+- ```pdf(self, x)```
+    Probability density function calculator for the gaussian distribution.
+
+        Args:
+            x (float): point for calculating the probability density function
+
+
+        Returns:
+            float: probability density function output
+- ```plot_histogram_pdf(self, n_spaces=50)```
+    Function to plot the normalized histogram of the data and a plot of the
+        probability density function along the same range
+
+        Args:
+            n_spaces (int): number of data points
+
+        Returns:
+            list: x values for the pdf plot
+            list: y values for the pdf plot
+- ```__add__(self, other)```
+    Function to add together two Gaussian distributions
+
+        Args:
+            other (Gaussian): Gaussian instance
+
+        Returns:
+            Gaussian: Gaussian distribution
+- ```__repr__(self)```
+    Function to output the characteristics of the Gaussian instance
+
+        Args:
+            None
+
+        Returns:
+            string: characteristics of the Gaussian
+
+## Installation
+- Step 1: To install the package<br>
+    ```pip install curve_distributions```
+- Step 2: To import the package and classes<br>
+    ```from curve_distributions import Gaussian,Binomial```
+
