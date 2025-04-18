@@ -16,14 +16,14 @@ class Binomial(Distribution):
 
     """
 
-    def __init__(self, prob=.5, size=20):
+    def __init__(self, prob=.5, size=20) -> None:
 
-        self.n = size
-        self.p = prob
+        self.n:int = size
+        self.p:float = prob
 
         Distribution.__init__(self, self.calculate_mean(), self.calculate_stdev())
 
-    def calculate_mean(self):
+    def calculate_mean(self) -> float:
 
         """Function to calculate the mean from p and n
         
@@ -35,11 +35,11 @@ class Binomial(Distribution):
     
         """
 
-        self.mean = self.p * self.n
+        self.mean:float = self.p * self.n
 
         return self.mean
 
-    def calculate_stdev(self):
+    def calculate_stdev(self) -> float:
 
         """Function to calculate the standard deviation from p and n.
         
@@ -51,11 +51,11 @@ class Binomial(Distribution):
     
         """
 
-        self.stdev = math.sqrt(self.n * self.p * (1 - self.p))
+        self.stdev :float = math.sqrt(self.n * self.p * (1 - self.p))
 
         return self.stdev
 
-    def replace_stats_with_data(self):
+    def replace_stats_with_data(self) -> float:
 
         """Function to calculate p and n from the data set
         
@@ -68,13 +68,13 @@ class Binomial(Distribution):
     
         """
 
-        self.n = len(self.data)
-        self.p = 1.0 * sum(self.data) / len(self.data)
-        self.mean = self.calculate_mean()
-        self.stdev = self.calculate_stdev()
+        self.n :int = len(self.data)
+        self.p :float = 1.0 * sum(self.data) / len(self.data)
+        self.mean :float = self.calculate_mean()
+        self.stdev :float = self.calculate_stdev()
         return self.p, self.n
 
-    def plot_bar(self):
+    def plot_bar(self) -> None:
         """Function to output a histogram of the instance variable data using 
         matplotlib pyplot library.
         
@@ -90,7 +90,7 @@ class Binomial(Distribution):
         plt.xlabel('outcome')
         plt.ylabel('count')
 
-    def pdf(self, k):
+    def pdf(self, k) -> float:
         """Probability density function calculator for the gaussian distribution.
         
         Args:
@@ -101,12 +101,12 @@ class Binomial(Distribution):
             float: probability density function output
         """
 
-        a = math.factorial(self.n) / (math.factorial(k) * (math.factorial(self.n - k)))
+        a :float = math.factorial(self.n) / (math.factorial(k) * (math.factorial(self.n - k)))
         b = (self.p ** k) * (1 - self.p) ** (self.n - k)
 
         return a * b
 
-    def plot_bar_pdf(self):
+    def plot_bar_pdf(self) -> list:
 
         """Function to plot the pdf of the binomial distribution
         
@@ -119,8 +119,8 @@ class Binomial(Distribution):
             
         """
 
-        x = []
-        y = []
+        x :list = []
+        y :list = []
 
         # calculate the x values to visualize
         for i in range(self.n + 1):
@@ -154,7 +154,7 @@ class Binomial(Distribution):
         except AssertionError as error:
             raise
 
-        result = Binomial()
+        result :Binomial = Binomial()
         result.n = self.n + other.n
         result.p = self.p
         result.calculate_mean()
@@ -162,7 +162,7 @@ class Binomial(Distribution):
 
         return result
 
-    def __repr__(self):
+    def __repr__(self) -> str:
 
         """Function to output the characteristics of the Binomial instance
         
@@ -174,5 +174,4 @@ class Binomial(Distribution):
         
         """
 
-        return "mean {}, standard deviation {}, p {}, n {}". \
-            format(self.mean, self.stdev, self.p, self.n)
+        return f"mean {self.mean}, standard deviation {self.stdev}, p {self.p}, n {self.n}"
