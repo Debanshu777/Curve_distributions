@@ -1,16 +1,23 @@
-Metadata-Version: 2.1
-Name: curve-distributions
+Metadata-Version: 2.4
+Name: curve_distributions
 Version: 0.3
 Summary: Various functions on Gaussian and Binomial distributions
 Home-page: https://github.com/Debanshu777/Curve_distributions
 Author: Debanshu777
 Author-email: debanshudatta123@gmil.com
 License: MIT
-Platform: UNKNOWN
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3
 Classifier: Programming Language :: Python :: 3.7
 Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: summary
 
 # Curve_distributions
 
@@ -124,4 +131,3 @@ distributions
     ```pip install curve_distributions```
 - Step 2: To import the package and classes<br>
     ```from curve_distributions import Gaussian,Binomial```
-
