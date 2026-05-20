@@ -93,3 +93,14 @@ class TestBinomialClass(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+from curve_distributions.PoissonDistribution import Poisson
+
+def test_poisson_distribution():
+    poisson = Poisson(3)  # λ = 3
+    assert round(poisson.pmf(2), 4) == 0.2240  # PMF for k=2
+    assert poisson.mean() == 3
+    assert poisson.variance() == 3
+    print("Poisson test passed.")
+
+test_poisson_distribution()

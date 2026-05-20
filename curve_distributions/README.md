@@ -1,3 +1,4 @@
+
 # Curve_distributions
 
 ## Description 
@@ -6,6 +7,8 @@ one number (float) per line. The numbers are stored and according there are seve
 are present:
 - Gaussian Distribution
 - Binomial Distribution <br>
+- Poisson Distribution
+
 functions includes calculating mean,standard deviation,plotting in-from of histograms,getting
 probability distribution function,plotting the normalized histogram of the data and a plot of 
 the probability density function along the same range,etc.
@@ -30,6 +33,12 @@ the probability density function along the same range,etc.
         - p (float) representing the probability of an event occurring
         - n (int) number of trials
 
+- Poisson distribution class for calculating and 
+    visualizing a Poisson distribution.
+
+    Attributes:
+
+        - lam (float) representing the expected rate of occurrences (λ)
 
 ## Functions
 List of all the functions present that can be performed with either of the  Gaussian or Binomial
@@ -110,3 +119,14 @@ distributions
     ```pip install curve_distributions```
 - Step 2: To import the package and classes<br>
     ```from curve_distributions import Gaussian,Binomial```
+    ```from curve_distributions import Poisson```
+       
+## Example: Poisson Distribution
+
+```python
+from curve_distributions.PoissonDistribution import Poisson
+
+p = Poisson(3)
+print("PMF for k=2:", round(p.pmf(2), 4))  # Output: ~0.2240
+print("Mean:", p.mean())                   # Output: 3
+print("Variance:", p.variance())           # Output: 3
